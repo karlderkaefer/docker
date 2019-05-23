@@ -1,0 +1,16 @@
+sudo: required
+language: bash
+
+services:
+- docker
+
+branches:
+  only:
+  - master
+
+script:
+- echo $DOCKER_USERNAME
+- make push-aws-kubectl-helm
+
+after_script:
+- docker images
