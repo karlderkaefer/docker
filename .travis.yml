@@ -11,6 +11,7 @@ branches:
 script:
 - echo $DOCKER_USERNAME
 - make push-aws-kubectl-helm
+- make push-golang-terraform
 
 after_script:
 - docker images
