@@ -13,6 +13,8 @@ RUN apk --no-cache add tar gzip py-pip python wget curl && \
   rm -f /helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz && \
   # install kubectl
   curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && \
+  curl -L curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator -o /usr/local/bin/aws-iam-authenticator && \
   chmod +x /usr/local/bin/kubectl && \
+  chmod +x /usr/local/bin/aws-iam-authenticator && \
   # cleanup
   apk del py-pip wget
