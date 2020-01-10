@@ -3,7 +3,7 @@ FROM alpine:3.9
 ENV HELM_LATEST_VERSION="v2.14.3"
 ENV KUBE_LATEST_VERSION="v1.14.2"
 
-RUN apk --no-cache add tar gzip py-pip python wget curl && \
+RUN apk --no-cache add tar gzip py-pip python wget curl bash && \
   # install aws cli
   pip install --upgrade pip awscli && \
   # install helm
